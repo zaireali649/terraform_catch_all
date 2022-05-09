@@ -17,3 +17,13 @@ variable "region" {
     type = string
     default = ""
 }
+
+variable "vpc_security_group_ids" {
+    type = any
+    default = []
+}
+
+variable "user_data" {
+    type = string
+    default = ""
+}
