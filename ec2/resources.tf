@@ -7,5 +7,4 @@ resource "aws_instance" "app_server" {
   tags = {
     Name = var.tag_name
   }
-
 }
