@@ -5,7 +5,7 @@ variable "region" {
 
 variable "ami" {
     type = string
-    default = "ami-0022f774911c1d690"
+    default = "ami-09e67e426f25ce0d7"
 }
 
 variable "instance_type" {
@@ -15,5 +15,30 @@ variable "instance_type" {
 
 variable "tag_name" {
     type = string
-    default = "ExampleAppServerInstance"
+    default = "ExampleAppServer"
+}
+
+variable "sg_tag_name" {
+    type = string
+    default = "ExampleAppServer"
+}
+
+variable "sg_name" {
+    type = string
+    default = "ExampleAppServerSecurityGroup"
+}
+
+variable "sg_vpc_id" {
+    type = string
+    default = "vpc-0a9ee577"
+}
+
+variable "vpc_security_group_ids" {
+    type = any
+    default = []
+}
+
+variable "user_data" {
+    type = string
+    default = ""
 }
