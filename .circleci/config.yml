@@ -10,6 +10,7 @@ jobs:
       - run:
           name: terraform init & plan
           command: |
+            cd tf_scripts/root_script
             terraform init -input=false
             terraform plan -out tfapply 
       - persist_to_workspace:
@@ -26,6 +27,7 @@ jobs:
       - run:
           name: terraform
           command: |
+            cd tf_scripts/root_script
             terraform apply -auto-approve tfapply
       - persist_to_workspace:
           root: .
@@ -41,6 +43,7 @@ jobs:
       - run:
           name: terraform create destroy plan
           command: |
+            cd tf_scripts/root_script
             terraform plan -destroy -out tfdestroy 
       - persist_to_workspace:
           root: .
@@ -56,6 +59,7 @@ jobs:
       - run:
           name: terraform destroy
           command: |
+            cd tf_scripts/root_script
             terraform apply -auto-approve tfdestroy
 
 workflows:
