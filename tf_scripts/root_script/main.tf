@@ -1,5 +1,5 @@
 module "instance"{
-    source = "./ec2"
+    source = "./module_resources/ec2"
 
     region = var.region
     ami = var.ami
@@ -10,7 +10,7 @@ module "instance"{
 }
 
 module "sg"{
-    source = "./security_group"
+    source = "./module_resources/security_group"
     
     sg_vpc_id = var.sg_vpc_id
     sg_name = var.sg_name
